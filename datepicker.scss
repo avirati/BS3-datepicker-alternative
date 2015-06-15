@@ -8,7 +8,46 @@
 	.datepicker-header {
 		text-align: center;
 		font-weight: bold;
-		padding: 10px 0px;
+		position: relative;
+
+		.prev-arrow, .next-arrow {
+			cursor: pointer;
+			padding: 10px;
+			position: absolute;
+			top: 0px;
+			width: 16px;
+			height: 16px;
+
+			&:hover {
+				background-color: #eee;
+			}
+		}
+
+		.prev-arrow {
+			float: left;
+			left: 0px;
+
+			&:after {
+				content: '◀';
+			}
+		}
+
+		.next-arrow {
+			float: right;
+			right: 0px;
+			
+			&:after {
+				content: '▶';
+			}
+		}
+
+		.month-year {
+			display: block;
+			margin: 0 auto;
+			width: 200px;
+			text-align: center;
+			padding: 10px 0px;
+		}
 	}
 	.datepicker-body {
 		text-align: center;

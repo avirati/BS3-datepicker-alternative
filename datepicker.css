@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: 'Open Sans', sans-serif; }
 
@@ -7,7 +8,32 @@
   .datepicker .datepicker-header {
     text-align: center;
     font-weight: bold;
-    padding: 10px 0px; }
+    position: relative; }
+    .datepicker .datepicker-header .prev-arrow, .datepicker .datepicker-header .next-arrow {
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      top: 0px;
+      width: 16px;
+      height: 16px; }
+      .datepicker .datepicker-header .prev-arrow:hover, .datepicker .datepicker-header .next-arrow:hover {
+        background-color: #eee; }
+    .datepicker .datepicker-header .prev-arrow {
+      float: left;
+      left: 0px; }
+      .datepicker .datepicker-header .prev-arrow:after {
+        content: '◀'; }
+    .datepicker .datepicker-header .next-arrow {
+      float: right;
+      right: 0px; }
+      .datepicker .datepicker-header .next-arrow:after {
+        content: '▶'; }
+    .datepicker .datepicker-header .month-year {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      text-align: center;
+      padding: 10px 0px; }
   .datepicker .datepicker-body {
     text-align: center; }
     .datepicker .datepicker-body tbody tr td {

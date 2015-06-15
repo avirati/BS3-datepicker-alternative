@@ -21,7 +21,9 @@ var Datepicker = function(el, options){
         html += "<div class='datepicker'>";
 
         html += "<div class='datepicker-header'> \
-                    " + monthnames[Month] + " " + Year + " \
+                    <div class='prev-arrow'></div> \
+                    <div class='month-year'>" + monthnames[Month] + " " + Year + "</div> \
+                    <div class='next-arrow'></div> \
                 </div>"
 
         html += "<table class='datepicker-body'> \
@@ -59,6 +61,43 @@ var Datepicker = function(el, options){
 
         html += "</tr></tbody></table></div>";
         container.innerHTML = html;
+
+        var prev_arrows = document.querySelectorAll('.prev-arrow');
+        var next_arrows = document.querySelectorAll('.next-arrow');
+
+        var nextMonthRender = function() {
+            console.log("Next month called");
+            if(options.month > 10) {
+                options.month = 0;
+                options.year += 1;
+                generateHTML(options.month, options.year);
+            }
+            else {
+                options.month += 1;
+                generateHTML(options.month, options.year);
+            }
+        }
+
+        var prevMonthRender = function() {
+            console.log("Previous month called");
+            if(options.month < 1) {
+                options.month = 11;
+                options.year -= 1;
+                generateHTML(options.month, options.year);
+            }
+            else {
+                options.month -= 1;
+                generateHTML(options.month, options.year);
+            }
+        }
+
+        for(var i = 0, iL = prev_arrows.length; i < iL; i++) {
+            prev_arrows[i].onclick = prevMonthRender;
+        }
+
+        for(var i = 0, iL = next_arrows.length; i < iL; i++) {
+            next_arrows[i].onclick = nextMonthRender;
+        }
     };
 
     generateHTML(options.month, options.year);

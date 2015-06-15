@@ -21,7 +21,7 @@ var Datepicker = function(el, options){
         html += "<div class='datepicker'>";
 
         html += "<div class='datepicker-header'> \
-                    <div class='prev-arrow'></div> \
+                    <div class='prev-arrow" + (thisMonth >= Month ? ' disabled' : '') + "'></div> \
                     <div class='month-year'>" + monthnames[Month] + " " + Year + "</div> \
                     <div class='next-arrow'></div> \
                 </div>"
@@ -48,7 +48,7 @@ var Datepicker = function(el, options){
             var className = "";
             if ((i == thisDay) && (Month == thisMonth) && (Year == thisYear)) className += " today";
 
-            if (!(Year > thisYear || (Year == thisYear && Month > thisMonth) || (Year == thisYear && Month == thisMonth && i >= thisDay))) className += " date-passed";
+            if (!(Year > thisYear || (Year == thisYear && Month > thisMonth) || (Year == thisYear && Month == thisMonth && i >= thisDay))) className += " disabled";
 
             html += "<td class='" + className + "'><span>" + i + "</span></td>";
 

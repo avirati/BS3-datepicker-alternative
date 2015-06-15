@@ -1,4 +1,4 @@
-* {
+.datepicker {
 	font-family: 'Open Sans', sans-serif;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -6,10 +6,14 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-.datepicker {
+
 	width: 280px;
 	background-color: #fff;
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
 	
 	.datepicker-header {
 		text-align: center;
@@ -23,6 +27,7 @@
 			top: 0px;
 			width: 16px;
 			height: 16px;
+			color: #555;
 
 			&:hover {
 				background-color: #eee;
@@ -67,9 +72,9 @@
 						background-color: #eee;
 					}
 
-					&.date-passed {
-						opacity: 0.5;
-						pointer-events: none;
+					&.today {
+						background-color: #4688F1;
+						color: #fff;
 					}
 				}
 			}

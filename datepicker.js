@@ -66,7 +66,6 @@ var Datepicker = function(el, options){
         var next_arrows = document.querySelectorAll('.next-arrow');
 
         var nextMonthRender = function() {
-            console.log("Next month called");
             if(options.month > 10) {
                 options.month = 0;
                 options.year += 1;
@@ -79,7 +78,6 @@ var Datepicker = function(el, options){
         }
 
         var prevMonthRender = function() {
-            console.log("Previous month called");
             if(options.month < 1) {
                 options.month = 11;
                 options.year -= 1;

@@ -1,0 +1,22 @@
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+.datepicker {
+  width: 280px;
+  background-color: #fff; }
+  .datepicker .datepicker-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0px; }
+  .datepicker .datepicker-body {
+    text-align: center; }
+    .datepicker .datepicker-body tbody tr td {
+      padding: 10px;
+      cursor: pointer; }
+      .datepicker .datepicker-body tbody tr td:hover {
+        background-color: #eee; }
+      .datepicker .datepicker-body tbody tr td.date-passed {
+        opacity: 0.5;
+        pointer-events: none; }
+
+/*# sourceMappingURL=datepicker.css.map */

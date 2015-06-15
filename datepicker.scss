@@ -1,0 +1,33 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+.datepicker {
+	width: 280px;
+	background-color: #fff;
+	
+	.datepicker-header {
+		text-align: center;
+		font-weight: bold;
+		padding: 10px 0px;
+	}
+	.datepicker-body {
+		text-align: center;
+
+		tbody {
+			tr {
+				td{
+					padding: 10px;
+					cursor: pointer;
+					&:hover {
+						background-color: #eee;
+					}
+
+					&.date-passed {
+						opacity: 0.5;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -3,6 +3,7 @@ var Datepicker = function(el, options){
     
     var container = document.createElement('DIV');
     container.className = 'datepicker';
+    container.style.display="none";
 
     var options = options || {};
 
@@ -51,8 +52,9 @@ var Datepicker = function(el, options){
             if ((i == thisDay) && (Month == thisMonth) && (Year == thisYear)) className += " today";
 
             if (!(Year > thisYear || (Year == thisYear && Month > thisMonth) || (Year == thisYear && Month == thisMonth && i >= thisDay))) className += " disabled";
+            else className += " valid";
 
-            html += "<td class='valid'><span>" + i + "</span></td>";
+            html += "<td class='" + className + "'><span>" + i + "</span></td>";
 
             column++;
             if (column == 7) {
@@ -63,7 +65,6 @@ var Datepicker = function(el, options){
 
         html += "</tr></tbody></table>";
         container.innerHTML = html;
-        container.style.display="none";
         document.body.appendChild(container);
 
         var prev_arrows = document.querySelectorAll('.prev-arrow');
@@ -105,6 +106,7 @@ var Datepicker = function(el, options){
 
         var updateActivator = function(d, m, y) {
             activator.value = new Date(y, m, d);
+            container.style.display = "none";
         }
 
         for(var i = 0, iL = valid_dates.length; i < iL; i++) {
@@ -115,12 +117,6 @@ var Datepicker = function(el, options){
 
     activator.onclick = function(){
         container.style.display = "block";
-    }
-
-    activator.onblur = function(){
-        setTimeout(function() {
-            container.style.display = "none";
-        }, 10);
     }
 
     options.month = options.month || thisMonth;

@@ -3,12 +3,12 @@ Trying to come up with pure JS datepicker without any dependecies yet having sim
 
 I am not a guy who would use a lot of 3rd Party Libraries until and unless absolutely needed. For Example, to use Bootstrap Datepicker, I will have to include these dependencies :
 
-1) JQuery
-2) Bootstrap CSS
-3) Bootstrap JS
-4) Moment JS
-5) Datepicker JS
-6) Datepicker CSS
+1) JQuery<br>
+2) Bootstrap CSS<br>
+3) Bootstrap JS<br>
+4) Moment JS<br>
+5) Datepicker JS<br>
+6) Datepicker CSS<br>
 
 While actually I need only one JS and one CSS file.
 

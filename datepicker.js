@@ -1,16 +1,11 @@
 var Datepicker = function(el, options){
     var activator = document.getElementById(el);
     options = options || {};
-    var parentElement = options.parentElement;
     
     var container = document.createElement('DIV');
     container.className = 'datepicker';
     container.style.display="none";
-
-    if(parentElement)
-        parentElement.parentNode.appendChild(container);
-    else
-        document.body.appendChild(container);
+    activator.parentNode.appendChild(container);
 
     var options = options || {};
 
@@ -123,8 +118,8 @@ var Datepicker = function(el, options){
 
     activator.onclick = function(){
         container.style.display = "block";
-        container.style.top = activator.getBoundingClientRect().top + 50;
-        container.style.left = activator.getBoundingClientRect().left;
+        container.style.top = activator.offsetHeight + 10;
+        container.style.left = 0;
     }
 
     options.month = options.month || thisMonth;

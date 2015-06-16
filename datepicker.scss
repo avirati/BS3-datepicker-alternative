@@ -10,6 +10,7 @@
 	width: 285px;
 	background-color: #fff;
 	position: absolute;
+	z-index: 1000;
 
 	.disabled {
 		opacity: 0.5;

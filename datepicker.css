@@ -9,7 +9,8 @@
   user-select: none;
   width: 285px;
   background-color: #fff;
-  position: absolute; }
+  position: absolute;
+  z-index: 1000; }
   .datepicker .disabled {
     opacity: 0.5;
     pointer-events: none; }

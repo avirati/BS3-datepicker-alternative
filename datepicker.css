@@ -7,8 +7,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 280px;
-  background-color: #fff; }
+  width: 285px;
+  background-color: #fff;
+  position: absolute; }
   .datepicker .disabled {
     opacity: 0.5;
     pointer-events: none; }

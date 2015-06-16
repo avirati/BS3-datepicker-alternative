@@ -1,9 +1,16 @@
 var Datepicker = function(el, options){
     var activator = document.getElementById(el);
+
+    var parentElement = options.parentElement;
     
     var container = document.createElement('DIV');
     container.className = 'datepicker';
     container.style.display="none";
+
+    if(parentElement)
+        parentElement.parentNode.appendChild(container);
+    else
+        document.body.appendChild(container);
 
     var options = options || {};
 
@@ -65,7 +72,6 @@ var Datepicker = function(el, options){
 
         html += "</tr></tbody></table>";
         container.innerHTML = html;
-        document.body.appendChild(container);
 
         var prev_arrows = document.querySelectorAll('.prev-arrow');
         var next_arrows = document.querySelectorAll('.next-arrow');
@@ -117,6 +123,8 @@ var Datepicker = function(el, options){
 
     activator.onclick = function(){
         container.style.display = "block";
+        container.style.top = activator.getBoundingClientRect().top + 50;
+        container.style.left = activator.getBoundingClientRect().left;
     }
 
     options.month = options.month || thisMonth;

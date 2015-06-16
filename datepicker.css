@@ -7,10 +7,11 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 285px;
+  width: 286px;
   background-color: #fff;
   position: absolute;
-  z-index: 1000; }
+  z-index: 1000;
+  border: 1px solid #ccc; }
   .datepicker .disabled {
     opacity: 0.5;
     pointer-events: none; }

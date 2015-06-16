@@ -71,7 +71,7 @@ var Datepicker = function(el, options){
         var prev_arrows = document.querySelectorAll('.prev-arrow');
         var next_arrows = document.querySelectorAll('.next-arrow');
 
-        var nextMonthRender = function() {
+        var nextMonthRender = function(e) {
             if(options.month > 10) {
                 options.month = 0;
                 options.year += 1;
@@ -83,7 +83,7 @@ var Datepicker = function(el, options){
             }
         }
 
-        var prevMonthRender = function() {
+        var prevMonthRender = function(e) {
             if(options.month < 1) {
                 options.month = 11;
                 options.year -= 1;
@@ -105,21 +105,33 @@ var Datepicker = function(el, options){
 
         var valid_dates = document.querySelectorAll('.valid');
 
-        var updateActivator = function(d, m, y) {
+        var updateActivator = function(d, m, y, e) {
             activator.value = new Date(y, m, d);
             container.style.display = "none";
         }
 
         for(var i = 0, iL = valid_dates.length; i < iL; i++) {
             var date = valid_dates[i].childNodes[0].innerHTML;
-            valid_dates[i].onclick = updateActivator.bind(this, date, Month, Year);
+            valid_dates[i].onclick = updateActivator.bind(this, date, Month, Year, event);
         }
     };
 
-    activator.onclick = function(){
+    document.body.addEventListener("click", function(){
+        var datepickers = document.querySelectorAll(".datepicker")
+        for (var i = 0, iL = datepickers.length; i < iL; i++) {
+            datepickers[i].style.display = "none";
+        };
+    })
+
+    activator.onclick = function(e) {
+        e.stopPropagation();
         container.style.display = "block";
         container.style.top = activator.offsetHeight + 10;
         container.style.left = 0;
+    }
+
+    container.onclick = function(e) {
+        e.stopPropagation();
     }
 
     options.month = options.month || thisMonth;

@@ -1,6 +1,6 @@
 var Datepicker = function(el, options){
     var activator = document.getElementById(el);
-
+    options = options || {};
     var parentElement = options.parentElement;
     
     var container = document.createElement('DIV');
